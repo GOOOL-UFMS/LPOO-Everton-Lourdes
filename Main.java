@@ -1,28 +1,33 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InputMismatchException {
 
 		
 		Scanner sc = new Scanner(System.in);
 
 		// Usar exceção para tratar entradas inválidas para os valores referente a produtos e salário do Funcionario - TODO
 		
-		float valorProduto=0, salarioFuncionario=0;
+		float valorProduto=0.0f; 
 		try {
 		System.out.println("DIGITE O VALOR DO PRODUTO");
 		valorProduto = sc.nextFloat();
-		}catch(ArithmeticException | InputMismatchException e) {
-			e.getMessage();
+		}catch(ArithmeticException | NoSuchElementException | IllegalStateException  e) {
+			String r = e.getMessage();
+			System.out.println(r);
 		}
 		
-		System.out.println("DIGITE O SALARIO DO FUNCIONARIO");
+		float salarioFuncionario=0.0f;
 		try {
+			System.out.println("DIGITE O SALARIO DO FUNCIONARIO");
 			salarioFuncionario = sc.nextFloat();
+			System.out.println("TESTANDO AQUI ");
 		}catch(ArithmeticException | InputMismatchException e) {
-			e.getMessage();
+			String r = e.getMessage();
+			System.out.println(r);
 		}
 		Endereco end1 = new Endereco("Av. Costa e Silva", 2001, "Universitário", "Campo Grande", "79070-900");
         Endereco end2 = new Endereco("Av. Afonso Pena", 2002, "Centro", "Campo Grande", "79065-555");
@@ -31,7 +36,7 @@ public class Main {
         Endereco end5 = new Endereco("Rua Coronel Zózimo", 2005, "Monte Castelo", "Campo Grande", "79065-190");
         Endereco end6 = new Endereco("Rua Barueri", 2006, "Moreninha II", "Campo Grande", "79065-190");
 
-        Funcionario func1 = new Funcionario("Everton", "123456789", end1, "67999464219",  1000, "Feirante");
+        Funcionario func1 = new Funcionario("Everton", "33333333333", end1, "67999464219",  1000, "Feirante");
         Funcionario func2 = new Funcionario("Lourdes", "22222222222", end2, "67999898985", salarioFuncionario, "Feirante");
         
         Cliente cli1 = new Cliente("Eduardo", "07435925144", end3, "67999464221");
