@@ -30,18 +30,16 @@ public class Compra{
 	O valor do Produto impresso deve possuir 2 casas decimais
 	*/
 	public void listarCompra() {
-		
-		
-		
+		float total;
 		for (Produto produto : produtos) {
 			System.out.println("" + produto);
+			total += produto.getValor();
+			
 		}
 		//System.out.println("Fornecedor: "  );
 		System.out.println("Funcionário: " + funcionario.getNome());
 		System.out.println("Cliente: " + cliente.getNome());
-		//System.out.println("Valor total: " + produto);
-	}
-
+		System.out.println("Valor total: " + total.getValor());
 
 
 	
