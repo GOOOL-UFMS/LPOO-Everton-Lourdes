@@ -12,23 +12,18 @@ public class Main {
 		// Usar exceção para tratar entradas inválidas para os valores referente a produtos e salário do Funcionario - TODO
 		
 		float valorProduto=0.0f; 
+		float salarioFuncionario=0.0f;
+		
 		try {
-		System.out.println("DIGITE O VALOR DO PRODUTO");
+		System.out.println("DIGITE O VALOR DO PRODUTO: ");
 		valorProduto = sc.nextFloat();
-		}catch(ArithmeticException | NoSuchElementException | IllegalStateException  e) {
-			String r = e.getMessage();
-			System.out.println(r);
+
+		}catch(InputMismatchException  e) {
+			System.out.println("DEU MUITO RUIM");
 		}
 		
-		float salarioFuncionario=0.0f;
-		try {
-			System.out.println("DIGITE O SALARIO DO FUNCIONARIO");
-			salarioFuncionario = sc.nextFloat();
-			System.out.println("TESTANDO AQUI ");
-		}catch(ArithmeticException | InputMismatchException e) {
-			String r = e.getMessage();
-			System.out.println(r);
-		}
+		
+		
 		Endereco end1 = new Endereco("Av. Costa e Silva", 2001, "Universitário", "Campo Grande", "79070-900");
         Endereco end2 = new Endereco("Av. Afonso Pena", 2002, "Centro", "Campo Grande", "79065-555");
         Endereco end3 = new Endereco("Rua do Parque", 2003, "Centro", "Campo Grande", "79065-190");
@@ -36,6 +31,17 @@ public class Main {
         Endereco end5 = new Endereco("Rua Coronel Zózimo", 2005, "Monte Castelo", "Campo Grande", "79065-190");
         Endereco end6 = new Endereco("Rua Barueri", 2006, "Moreninha II", "Campo Grande", "79065-190");
 
+        try {
+			System.out.println("DIGITE O SALÁRIO DO FUNCIONÁRIO: ");
+			//SE ELE COMEU ALGUM INPUT COLOCA ESSE NEXTLINE
+			//TA PASSADA?
+			sc.nextLine();
+			salarioFuncionario = sc.nextFloat();
+			System.out.println(salarioFuncionario);
+		}catch(InputMismatchException e) {
+			String r = e.getMessage();
+			System.out.println(r);
+		}
         Funcionario func1 = new Funcionario("Everton", "33333333333", end1, "67999464219",  1000, "Feirante");
         Funcionario func2 = new Funcionario("Lourdes", "22222222222", end2, "67999898985", salarioFuncionario, "Feirante");
         
@@ -75,11 +81,5 @@ public class Main {
 		
 		System.out.println("\n*********************SEGUNDA COMPRA\n");
 		compra1.listarCompra();
-		
-		
-		
-		
-
 	}
-
 }
