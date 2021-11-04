@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.InputMismatchException;
 public class Main {
 
 	public static void main(String[] args) {
@@ -10,10 +10,20 @@ public class Main {
 
 		// Usar exceção para tratar entradas inválidas para os valores referente a produtos e salário do Funcionario - TODO
 		
-		float valorProduto, salarioFuncionario;
+		float valorProduto=0, salarioFuncionario=0;
+		try {
+		System.out.println("DIGITE O VALOR DO PRODUTO");
 		valorProduto = sc.nextFloat();
-		salarioFuncionario = sc.nextFloat();
+		}catch(ArithmeticException | InputMismatchException e) {
+			e.getMessage();
+		}
 		
+		System.out.println("DIGITE O SALARIO DO FUNCIONARIO");
+		try {
+			salarioFuncionario = sc.nextFloat();
+		}catch(ArithmeticException | InputMismatchException e) {
+			e.getMessage();
+		}
 		Endereco end1 = new Endereco("Av. Costa e Silva", 2001, "Universitário", "Campo Grande", "79070-900");
         Endereco end2 = new Endereco("Av. Afonso Pena", 2002, "Centro", "Campo Grande", "79065-555");
         Endereco end3 = new Endereco("Rua do Parque", 2003, "Centro", "Campo Grande", "79065-190");
@@ -58,6 +68,8 @@ public class Main {
 		
 		compra2.listarCompra();
 		
+		System.out.println("\n*********************SEGUNDA COMPRA\n");
+		compra1.listarCompra();
 		
 		
 		
