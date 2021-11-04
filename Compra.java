@@ -4,31 +4,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 public class Compra{
 
+	//atributos
 	private Funcionario funcionario;
 	private Cliente cliente;
 	private ArrayList<Produto> produtos = new ArrayList<>();
+	//fim dos atributos da classe
 	
+	
+	//metodos
 	public Compra(Funcionario funcionario, Cliente cliente) {
-		//ArrayList<Produto> produtos = new ArrayList<>();
 		this.funcionario = funcionario;
 		this.cliente = cliente;
 	}
-	
+	//adiciona o produto na compra
 	public void adicionaProduto(Produto prod) {
-		//this.produtos = prod;
-		this.produtos.add(prod);
-		
+		this.produtos.add(prod);	
 	}
 	
 	
 	
 	//TODO
-	/*O m�todo listar compra dever� informar o Funcion�rio que fez a venda e o cliente que
-	fez a compra. Em seguida, dever� listar todos os produtos comprados pelo cliente ordenado do menor
+	/** Em seguida, dever� listar todos os produtos comprados pelo cliente ordenado do menor
 	para o maior valor do produto
-	Ao final mostrar o valor total da compra.
-	O valor do Produto impresso deve possuir 2 casas decimais
-	*/
+	**/
 	public void listarCompra() {
 		//inicializa a variavel para somar o total da compra
 		float total = 0;
