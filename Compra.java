@@ -40,7 +40,6 @@ public class Compra{
 		System.out.println("Funcionário: " + funcionario.getNome());
 		System.out.println("Cliente: " + cliente.getNome());
 		System.out.println("Valor total: " + total.getValor());
-
-
+	}
 	
 }
