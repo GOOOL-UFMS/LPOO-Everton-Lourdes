@@ -32,7 +32,7 @@ public class Compra{
 		float total = 0;
 		//lista a lista de produtos
 		for (Produto produto : produtos) {
-			System.out.println("" + produto);
+			System.out.println(produto);
 			//soma o total de cada produto da lista
 			total += produto.getValor();
 		}
