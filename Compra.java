@@ -30,16 +30,21 @@ public class Compra{
 	O valor do Produto impresso deve possuir 2 casas decimais
 	*/
 	public void listarCompra() {
-		float total=0;
+		//inicializa a variavel para somar o total da compra
+		float total = 0;
+		//lista a lista de produtos
 		for (Produto produto : produtos) {
 			System.out.println("" + produto);
+			//soma o total de cada produto da lista
 			total += produto.getValor();
-			
 		}
-		//System.out.println("Fornecedor: "  );
+		//mostra o valor final da compra com 2 casas decimais
+		System.out.printf("Total da compra: %.2f\n", total);
+		//mostra o funcionário que efetuou a compra
 		System.out.println("Funcionário: " + funcionario.getNome());
+		//mosgra o cliente que comprou
 		System.out.println("Cliente: " + cliente.getNome());
-		System.out.println("Valor total: " + total.getValor());
+
 	}
 	
 }
