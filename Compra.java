@@ -20,13 +20,6 @@ public class Compra{
 	public void adicionaProduto(Produto prod) {
 		this.produtos.add(prod);	
 	}
-	
-	
-	
-	//TODO
-	/** Em seguida, dever� listar todos os produtos comprados pelo cliente ordenado do menor
-	para o maior valor do produto
-	**/
 	public void listarCompra() {
 		//inicializa a variavel para somar o total da compra
 		float total = 0;
